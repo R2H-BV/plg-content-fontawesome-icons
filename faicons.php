@@ -25,10 +25,10 @@ class plgcontentFaicons extends CMSPlugin {
      */
     public function onContentPrepare($context, &$article): void // phpcs:ignore
     {
-		// Don't run this plugin when the content is being indexed
-		if ($context === 'com_finder.indexer') {
-			return;
-		}
+        // Don't run this plugin when the content is being indexed
+        if ($context === 'com_finder.indexer') {
+            return;
+        }
 
         // Only execute if $article is an object and has a text property
         if (!is_object($article) || !property_exists($article, 'text') || is_null($article->text)) {
