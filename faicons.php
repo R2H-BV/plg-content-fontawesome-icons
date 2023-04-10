@@ -35,15 +35,6 @@ class plgcontentFaicons extends CMSPlugin {
             return;
         }
 
-        // Replace the Font Awesome snippets if possible.
-        // if (property_exists($article, 'introtext') && is_string($article->introtext)) {
-        //     $article->introtext = $this->replaceTags($article->introtext);
-        // }
-
-        // if (property_exists($article, 'fulltext') && is_string($article->fulltext)) {
-        //     $article->fulltext = $this->replaceTags($article->fulltext);
-        // }
-
         if (property_exists($article, 'text') && is_string($article->text)) {
             $article->text = $this->replaceTags($article->text);
         }
