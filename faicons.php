@@ -1,7 +1,9 @@
 <?php
+declare(strict_types = 1);
+
 /**
- * @copyright	Copyright (c) 2023  R2H BV (https://r2h.nl). All rights reserved.
- * @license		http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ * @copyright   Copyright (c) 2023  R2H BV (https://r2h.nl). All rights reserved.
+ * @license     http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
 use Joomla\CMS\Plugin\CMSPlugin;
@@ -13,15 +15,15 @@ use Joomla\CMS\Plugin\CMSPlugin;
 /**
  *  content - faicons Plugin
  *
- * @package		Joomla.Plugin
- * @subpakage	R2H B.V. faicons
+ * @package     Joomla.Plugin
+ * @subpakage   R2H B.V. faicons
  */
-class plgcontentFaicons extends CMSPlugin {
+class plgcontentFaicons extends CMSPlugin
+{
     /**
      * onContentPrepare
      * @param  string $context The content context.
      * @param  mixed  $article The article object.
-     * @return void
      */
     public function onContentPrepare($context, &$article): void // phpcs:ignore
     {
@@ -43,22 +45,35 @@ class plgcontentFaicons extends CMSPlugin {
     /**
      * Replace the FontAwesome tags.
      * @param  string $text The text to replace the tags in.
-     * @return string
      */
     protected function replaceTags(string $text): string
     {
         $sets = [];
 
-        if (preg_match_all('/\{(fa(?:l|r|s|b)?)\s+?([a-zA-Z0-9-\s]+)\}/', $text, $sets, PREG_SET_ORDER)) {
+        // Map the old tags to the new ones.
+        $types = [
+            'fa' => 'fa-solid',
+            'fas' => 'fa-solid',
+            'far' => 'fa-regular',
+            'fal' => 'fa-light',
+            'fad' => 'fa-duotone',
+            'fat' => 'fa-thin',
+        ];
+
+        // Find all the tags.
+        if (preg_match_all(
+            '/\{(fa(?:(?:l|-light)|(?:r|-regular)|(?:s|-solid)|(?:d|-duotone)|(?:t|-thin))?)\s+?(fa-[a-z0-9-]+)\}/',
+            $text,
+            $sets,
+            PREG_SET_ORDER
+        )) {
             foreach ($sets as $matches) {
                 $match = $matches[0];
                 $type = $matches[1];
                 $classes = trim($matches[2]);
 
-                // Replace old tags too.
-                if (strtolower($type) === 'fa') {
-                    $type = 'fas';
-                }
+                // Replace the old type with the new one.
+                $type = $types[$type] ?? $type;
 
                 $text = str_replace(
                     $match,
