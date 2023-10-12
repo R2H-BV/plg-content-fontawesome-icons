@@ -18,7 +18,7 @@ use Joomla\CMS\Plugin\CMSPlugin;
  * @package     Joomla.Plugin
  * @subpakage   R2H B.V. faicons
  */
-class plgcontentFaicons extends CMSPlugin
+class plgContentFaicons extends CMSPlugin // phpcs:ignore
 {
     /**
      * onContentPrepare
