@@ -1,3 +1,40 @@
 <updates>
-
-<update><name>Font Awesome icons</name><description>Font Awesome icons snippet code</description><element>faicons</element><type>plugin</type><version>1.0.1</version><folder>content</folder><client>0</client><infourl title="Font Awesome icons"/><downloads><downloadurl type="full" format="zip">https://extension-updates.com/updates/zip/r2h/faicons/plg_content_faicons_1.0.1.zip</downloadurl></downloads><tags><tag>stable</tag></tags><maintainer>R2H BV</maintainer><maintainerurl>https://extension-updates.com/</maintainerurl><targetplatform name="joomla" version="[45].[0123456789]"/></update></updates>
+  <update>
+    <name>Font Awesome icons</name>
+    <description>Font Awesome icons snippet code</description>
+    <element>faicons</element>
+    <type>plugin</type>
+    <version>1.0.1</version>
+    <folder>content</folder>
+    <client>0</client>
+    <infourl title="Font Awesome icons"/>
+    <downloads>
+      <downloadurl type="full" format="zip">https://extension-updates.com/updates/zip/r2h/faicons/plg_content_faicons_1.0.1.zip</downloadurl>
+    </downloads>
+    <tags>
+      <tag>stable</tag>
+    </tags>
+    <maintainer>R2H BV</maintainer>
+    <maintainerurl>https://extension-updates.com/</maintainerurl>
+    <targetplatform name="joomla" version="[45].[0123456789]"/>
+  </update>
+  <update>
+    <name>Font Awesome icons</name>
+    <description>Font Awesome icons snippet code</description>
+    <element>faicons</element>
+    <type>plugin</type>
+    <version>1.1.0</version>
+    <folder>content</folder>
+    <client>0</client>
+    <infourl title="Font Awesome icons"/>
+    <downloads>
+      <downloadurl type="full" format="zip">https://extension-updates.com/updates/zip/r2h/faicons/plg_content_faicons_1.1.0.zip</downloadurl>
+    </downloads>
+    <tags>
+      <tag>stable</tag>
+    </tags>
+    <maintainer>R2H BV</maintainer>
+    <maintainerurl>https://extension-updates.com/</maintainerurl>
+    <targetplatform name="joomla" version="[45].[0123456789]"/>
+  </update>
+</updates>

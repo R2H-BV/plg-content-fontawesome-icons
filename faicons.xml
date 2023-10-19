@@ -12,7 +12,7 @@
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<authorEmail>rick@r2h.nl</authorEmail>
 	<authorUrl>https://r2h.nl</authorUrl>
-	<version>1.0.1</version>
+	<version>1.1.0</version>
 	<description>PLG_SYSTEM_FAICONS_XML_DESCRIPTION</description>
 	<files>
 		<filename plugin="faicons">faicons.php</filename>
