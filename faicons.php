@@ -62,7 +62,7 @@ class plgContentFaicons extends CMSPlugin // phpcs:ignore
 
         // Find all the tags.
         if (preg_match_all(
-            '/\{(fa(?:(?:l|-light)|(?:r|-regular)|(?:s|-solid)|(?:d|-duotone)|(?:t|-thin))?)\s+?(fa-[a-z0-9-]+)\}/',
+            '/\{(fa(?:(?:l|-light)|(?:r|-regular)|(?:s|-solid)|(?:d|-duotone)|(?:t|-thin))?)\s+?(fa-[a-z0-9-]+)((?: [a-z0-9-_]+)+?)?\}/',
             $text,
             $sets,
             PREG_SET_ORDER
@@ -70,14 +70,15 @@ class plgContentFaicons extends CMSPlugin // phpcs:ignore
             foreach ($sets as $matches) {
                 $match = $matches[0];
                 $type = $matches[1];
-                $classes = trim($matches[2]);
+                $icon = $matches[2];
+                $classes = trim($matches[3]);
 
                 // Replace the old type with the new one.
                 $type = $types[$type] ?? $type;
 
                 $text = str_replace(
                     $match,
-                    '<i class="' . $type . ' ' . $classes . '"></i>',
+                    "<i class=\"{$type} {$icon} {$classes}\"></i>",
                     $text
                 );
             }
