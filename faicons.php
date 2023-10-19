@@ -72,7 +72,7 @@ class plgContentFaicons extends CMSPlugin // phpcs:ignore
                 $match = $matches[0];
                 $type = $matches[1];
                 $icon = $matches[2];
-                $classes = trim($matches[3]);
+                $classes = trim($matches[3] ?? '');
 
                 // Replace the old type with the new one.
                 $type = $types[$type] ?? $type;
