@@ -58,11 +58,12 @@ class plgContentFaicons extends CMSPlugin // phpcs:ignore
             'fal' => 'fa-light',
             'fad' => 'fa-duotone',
             'fat' => 'fa-thin',
+            'fab' => 'fa-brands',
         ];
 
         // Find all the tags.
         if (preg_match_all(
-            '/\{(fa(?:(?:l|-light)|(?:r|-regular)|(?:s|-solid)|(?:d|-duotone)|(?:t|-thin))?)\s+?(fa-[a-z0-9-]+)((?: [a-z0-9-_]+)+?)?\}/',
+            '/\{(fa(?:(?:l|-light)|(?:r|-regular)|(?:s|-solid)|(?:d|-duotone)|(?:t|-thin)|(?:b|-brands))?)\s+?(fa-[a-z0-9-]+)((?: [a-z0-9-_]+)+?)?\}/',
             $text,
             $sets,
             PREG_SET_ORDER
