@@ -43,7 +43,7 @@ version:
 	mv plg_content_faicons.zip updates/dist/plg_content_faicons_${VERSION}.zip
 	@ftp-upload -h ${FTP_HOST} -u ${FTP_USER} --password ${FTP_PASSWORD} -d "${FTP_BASEPATH}/updates/zip/r2h/faicons/" updates/dist/plg_content_faicons_${VERSION}.zip
 	@ftp-upload -h ${FTP_HOST} -u ${FTP_USER} --password ${FTP_PASSWORD} -d "${FTP_BASEPATH}/updates/r2h/" updates/faicons.xml
-	git add mod_rbs4custom.xml updates/customhtml.xml
+	git add faicons.xml updates/faicons.xml
 	git commit -m "Updated version to ${VERSION}"
 	git tag -a ${VERSION} -m "Version ${VERSION}"
-	git push origin main --tags
+	git push origin master --tags
