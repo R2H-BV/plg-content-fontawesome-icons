@@ -7,6 +7,7 @@ declare(strict_types = 1);
  */
 
 use Joomla\CMS\Plugin\CMSPlugin;
+use Joomla\CMS\Version;
 
 // phpcs:disable PSR1.Files.SideEffects
 \defined('_JEXEC') or die;
@@ -60,6 +61,23 @@ class plgContentFaicons extends CMSPlugin // phpcs:ignore
             'fat' => 'fa-thin',
             'fab' => 'fa-brands',
         ];
+
+        if (Version::MAJOR_VERSION === 4) {
+            $types = [
+                'fa' => 'fas',
+                'fas' => 'fas',
+                'far' => 'far',
+                'fal' => 'fal',
+                'fad' => 'fad',
+                'fab' => 'fab',
+
+                'fa-solid' => 'fas',
+                'fa-regular' => 'far',
+                'fa-light' => 'fal',
+                'fa-duotone' => 'fad',
+                'fa-brands' => 'fab',
+            ];
+        }
 
         // Find all the tags.
         if (preg_match_all(
